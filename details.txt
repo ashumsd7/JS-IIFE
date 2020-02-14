@@ -1,0 +1,48 @@
+IIFE: Immediately-invoked function expressions
+As in the past there was only var, and it has no block level scoping. in past time programmers invented a way to emulate it. What they did is  Immediately-invoked function expressions IIFE.
+Example:
+```
+(function(){
+let msg= "hello";
+console.log(msg);   // hello
+})();  
+```
+Here is the Expression is created and immediately called. So the code executes right away and has its own private variables.
+```
+(function(){
+let msg= "hello";
+console.log(msg);    // hello
+})(); 
+console.log(msg);   // error msg is not defined
+```
+
+You will get an error if you try to do this:
+```
+function (){
+    let msg= "hello";
+    console.log(msg);
+}()
+
+Error: expected Token Function Should have name:
+
+Note: when u will add a name then there is also an problem , ();
+```
+
+Here is the list of ways to create IIFE:
+```
+(function() {
+  alert("Parentheses around the function");
+})();
+
+(function() {
+  alert("Parentheses around the whole thing");
+}());
+
+!function() {
+  alert("Bitwise NOT operator starts the expression");
+}();
+
++function() {
+  alert("Unary plus starts the expression");
+}();
+``` 
